@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  video-streaming-server:
+    image: video-streaming-server:latest
+    build: .
+    ports:
+      - "3090:3090"
+    environment:
+      - VIDEO_FOLDER=/videos
+    volumes:
+      - ${VIDEO_FOLDER}:/videos

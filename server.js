@@ -11,8 +11,8 @@ const winston = require('winston');
 require('dotenv').config();
 
 const app = express();
-const PORT = 3000;
-const VIDEO_FOLDER = process.env.VIDEO_FOLDER;
+const PORT = 3090;
+const VIDEO_FOLDER = "/videos";
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minuti
@@ -112,4 +112,5 @@ app.get('/video', bruteforce.prevent, (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Video folder: ${VIDEO_FOLDER}`)
 });

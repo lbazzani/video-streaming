@@ -17,7 +17,7 @@ RUN npm install
 COPY . .
 
 # Esponi la porta su cui il server verrà eseguito
-EXPOSE 3000
+EXPOSE 3090
 
 # Comando per avviare l'applicazione
 CMD ["node", "server.js"]
